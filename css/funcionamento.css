@@ -1,0 +1,32 @@
+[data-semana]::after {
+  display: inline-block;
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: #e54;
+  border-radius: 50%;
+  margin-left: 4px;
+  border: 2px solid black;
+}
+
+[data-semana]::after {
+  animation: redBlink 1.5s infinite;
+	}
+	@keyframes redBlink{
+		0%		{ background-color: #e54;}
+		25%		{ background-color: #FAF6ED;}
+		50%		{ background-color: #e54;}
+		75%		{ background-color: #FAF6ED;}
+		100%	        { background-color: #e54;}
+	}
+
+.aberto::after {
+    animation: greenBlink 1.5s infinite;
+    }
+    @keyframes greenBlink{
+      0%		{ background-color: #3cff00;}
+      25%		{ background-color: #FAF6ED;}
+      50%		{ background-color: #3cff00;}
+      75%		{ background-color: #FAF6ED;}
+      100%	        { background-color: #3cff00;}
+    }  
