@@ -3,9 +3,10 @@ export default class Accordion {
     this.accordionList = document.querySelectorAll(list);
     this.activeClass = 'ativo';
   }
+
   ativarProximo(item) {
     item.classList.toggle(this.activeClass);
-    item.nextElementSibling.classList.toggle(this.activeClass);//aqui poderia ser usado this ou eventCurrentTarget
+    item.nextElementSibling.classList.toggle(this.activeClass);
   }
 
   addAccordionEvent() {
@@ -19,6 +20,6 @@ export default class Accordion {
       this.ativarProximo(this.accordionList[0]);
       this.addAccordionEvent();
     }
+    return this;
   }
-
 }
