@@ -1,21 +1,31 @@
-export default function initTab() {
-  const tabMenu = document.querySelectorAll('[data-tab="menu"] li');
-  const tabContent = document.querySelectorAll('[data-tab="content"] div');
-  tabContent[0].classList.add('ativo');
-  //isolado para adicionar classe ao primeiro item e mostrá-lo por padrão ao abrir o site
+export default class initTab {
+  constructor(menu, content) {
+    this.tabMenu = document.querySelectorAll(menu);
+    this.tabContent = document.querySelectorAll(content);
+    this.activeClass = 'ativo';
+  }
 
-  function activeTab(index) {
-    tabContent.forEach((item) => {
-      item.classList.remove('ativo');
+  activeTab(index) {
+    this.tabContent.forEach((item) => {
+      item.classList.remove(this.activeClass);
     });
-    tabContent[index].classList.add('ativo', tabContent[index].dataset.anime);
-  } //create a function to add a class active when the item is selected
+    const aparecer = this.tabContent[index].dataset.anime;
+    this.tabContent[index].classList.add(this.activeClass, aparecer);
+  }
 
-  if (tabMenu.length && tabContent.length) {
-    tabMenu.forEach((item, item2/*esse index não tem relação com o index da activeTab*/) => {
+  iniciarActive() {
+    this.tabMenu.forEach((item, index) => {
       item.addEventListener('click', () => {
-        activeTab(item2); //somente porque ativamos o index aqui como argumento agora ele tem relação
+        this.activeTab(index);
       });
     });
+  }
+
+  init() {
+    if (this.tabMenu.length && this.tabContent.length) {
+      this.iniciarActive();
+      this.activeTab(0);
+    }
+    return this;
   }
 }
