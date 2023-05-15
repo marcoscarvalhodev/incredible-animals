@@ -1,29 +1,34 @@
-export default function initModal() {
-  const botaoAbrir = document.querySelector('[data-modal="abrir"');
-  const botaoFechar = document.querySelector('[data-modal="fechar"]');
-  const containerModal = document.querySelector('[data-modal="container"]');
+export default class Modal {
+  constructor(abrir, fechar, modal) {
+    this.botaoAbrir = document.querySelector(abrir);
+    this.botaoFechar = document.querySelector(fechar);
+    this.containerModal = document.querySelector(modal);
 
-  function toggleModal(event) {
-    event.preventDefault();
-    containerModal.classList.toggle('ativo');
+    this.toggleModal = this.toggleModal.bind(this);
+    this.cliqueForaModal = this.cliqueForaModal.bind(this);
   }
 
-  function cliqueForaModal(event) {
-    if (event.target === this) {
-      toggleModal(event);//esse event só tem que estar aqui para ele reconhecer o preventDefault(), para não dar erro ao clicar fora do modal, nada mais que isso
+  toggleModal() {
+    this.containerModal.classList.toggle('ativo');
+  }
+
+  cliqueForaModal(event) {
+    if (event.target === this.containerModal) {
+      this.toggleModal();
     }
-
-  /*const modal = document.querySelector('.modal')
-    if(!modal.contains(event.target)){
-    toggleModal(event)//esse event só tem que estar aqui para ele reconhecer o preventDefault(), para não dar erro ao clicar fora do modal, nada mais que isso
-  }*///também funcionaria assim
   }
 
-  if (botaoAbrir && botaoFechar && containerModal) {
-    botaoAbrir.addEventListener('click', toggleModal);
-    botaoFechar.addEventListener('click', toggleModal);
-    //cliqueForaModal() {toggleModal()} é como se fosse um novo eventListener criado que também usa o toggle('ativo')
-    containerModal.addEventListener('click', cliqueForaModal);
+  clickStorage() {
+    this.botaoAbrir.addEventListener('click', this.toggleModal);
+    this.botaoFechar.addEventListener('click', this.toggleModal);
+    this.containerModal.addEventListener('click', this.cliqueForaModal);
+  }
+
+  init() {
+    if (this.botaoAbrir && this.botaoFechar && this.containerModal) {
+      this.clickStorage();
+    }
+    return this;
   }
 }
 
