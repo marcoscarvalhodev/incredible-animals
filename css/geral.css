@@ -48,7 +48,7 @@ img {
 
 .menu li a {
   color: #222222;
-  font-size:1.4rem;
+  font-size:1.5rem;
   font-weight: bold;
   padding: 1.5rem;
   margin: 0rem 1rem 0rem 0rem;
@@ -87,7 +87,7 @@ h1 {
 }
 
 h2{
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   color: #e54;
   font-weight: 500;
   margin: 0rem 0rem 1.6rem;
@@ -158,7 +158,7 @@ dl {
 
 dt {
   color: #e54;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   margin: 3.2rem 0rem 0.8rem;
   cursor: pointer;
   

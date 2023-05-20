@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 export default function initFetchBitcoin() {
   async function fetchBitcoin() {
     try {
@@ -16,13 +14,6 @@ export default function initFetchBitcoin() {
   fetchBitcoin();
 }
 
-
-
-const difference = _.difference(['Banana', 'Morango', 'Uva'], ['Banana', 'cenoura', 'Abacate']);
-
-console.log(difference);
-const c = 'c';
-console.log(c);
 
 
 
