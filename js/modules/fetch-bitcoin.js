@@ -13,8 +13,3 @@ export default function bitcoin(url, element) {
 
   fetchBitcoin();
 }
-
-
-
-
-
