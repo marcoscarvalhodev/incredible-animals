@@ -1,14 +1,16 @@
-export default class ScrollAnima {
-  constructor(sections, valor) {
-    this.sections = document.querySelectorAll(sections);
-    this.windowMetade = window.innerHeight * valor;
+import debounce from './debounce.js';
 
-    this.checkDistance = this.checkDistance.bind(this);
+export default class ScrollAnima {
+  constructor(sections) {
+    this.sections = document.querySelectorAll(sections);
+    this.windowMetade = window.innerHeight * (0.7);
+
+    this.checkDistance = debounce(this.checkDistance.bind(this), 20);
   }
 
   getDistance() {
     this.distance = [...this.sections].map((section) => {
-      const offset = section.offsetTop;
+      const offset = section.getBoundingClientRect().top;
       return {
         element: section,
         offset: Math.floor(offset - this.windowMetade),
@@ -17,8 +19,9 @@ export default class ScrollAnima {
   }
 
   checkDistance() {
+    this.getDistance();
     this.distance.forEach((item) => {
-      if (window.pageYOffset > item.offset) {
+      if (item.offset < 0) {
         item.element.classList.add('ativo');
       } else if (item.element.classList.contains('ativo')) {
         item.element.classList.remove('ativo');
