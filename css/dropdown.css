@@ -8,6 +8,7 @@
   border: 2px solid #333;
   z-index: 200;
   padding: 14px;
+  box-sizing: border-box;
 }
 
 .dropdown-menu li a:hover {
@@ -15,12 +16,12 @@
 }
 
 .dropdown-menu li {
-  padding: 10px;
+  padding: 10px 0px;
+  
 }
 
 .dropdown-menu li a {
   padding: 8px;
-  margin: 0px;
 }
 
 .dropdown-menu::before{

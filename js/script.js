@@ -4,7 +4,7 @@ import Tab from './modules/alternate-tab.js';
 import Modal from './modules/modal.js';
 import Tooltip from './modules/tooltip.js';
 import fetchAnimais from './modules/fetch-animais.js';
-import initDropdownMenu from './modules/dropdown-menu.js';
+import DropdownMenu from './modules/dropdown-menu.js';
 import initMenuMobile from './modules/menu-mobile.js';
 import initFunctionamento from './modules/funcionamento.js';
 import fetchBitcoin from './modules/fetch-bitcoin.js';
@@ -31,7 +31,9 @@ tooltip.init();
 const scrollAnima = new ScrollAnima('[data-scroll="scroll"]');
 scrollAnima.init();
 
-initDropdownMenu();
+const dropdown = new DropdownMenu('[data-dropdown]');
+dropdown.init();
+
 initMenuMobile();
 initFunctionamento();
 
