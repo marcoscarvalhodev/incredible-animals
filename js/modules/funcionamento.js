@@ -1,32 +1,41 @@
-export default function initFunctionamento() {
+export default class Functionamento {
+  constructor(select, activeClass) {
+    this.selectFunc = document.querySelector(select);
+    this.activeClass = activeClass;
+  }
 
+  buscarDados() {
+    this.diasSemana = this.selectFunc.dataset.semana.split(',').map(Number);
+    this.horarioSemana = this.selectFunc.dataset.horario.split(',').map(Number);
+  }
+
+  dadosAgora() {
+    this.dataAgora = new Date();
+    this.diaAgora = this.dataAgora.getDay();
+    this.horarioAgora = this.dataAgora.getUTCHours() - 3;
+  }
+
+  estaAberto() {
+    const semanaAberto = this.diasSemana.indexOf(this.diaAgora) !== -1;
+    const horarioAberto = (this.horarioAgora >= this.horarioSemana[0] && this.horarioAgora < this.horarioSemana[1]);
+
+    return semanaAberto && horarioAberto;
+  }
+
+  ativaAberto() {
+    if (this.estaAberto()) {
+      this.selectFunc.classList.add(this.activeClass);
+    }
+  }
+
+  init() {
+    if (this.selectFunc) {
+      this.buscarDados();
+      this.dadosAgora();
+      this.ativaAberto();
+    }
+    return this;
+  }
 }
 
-const funcionamento = document.querySelector('[data-semana]');
-const diasSemana = funcionamento.dataset.semana.split(',').map(Number);//turned each of items in Array into numbers
 
-const horarioSemana = funcionamento.dataset.horario.split(',').map(Number);
-
-
-console.log(diasSemana, 'diasSemana');
-
-console.log(horarioSemana, 'horarioSemana');
-
-const dataAgora = new Date();
-const diaAgora = dataAgora.getDay();
-const horarioAgora = dataAgora.getHours();
-
-console.log(diaAgora, 'diaAgora');
-console.log(horarioAgora, 'horarioAgora');
-
-
-
-const semanaAberto = diasSemana.indexOf(diaAgora) !== -1;
-
-console.log(semanaAberto);
-
-const horarioAberto = (horarioAgora >= horarioSemana[0] && horarioAgora < horarioSemana[1]);
-//8 a 18
-if (semanaAberto && horarioAberto) {
-  funcionamento.classList.add('aberto');
-}
