@@ -33,6 +33,7 @@ export default class MenuMobile {
     if (this.menuButton && this.menuList) {
       this.eventTrigger();
     }
+    return this;
   }
 }
 

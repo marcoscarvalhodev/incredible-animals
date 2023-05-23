@@ -32,7 +32,7 @@ export default class DropdownMenu {
     if (this.dropdown.length) {
       this.dropdownTrigger();
     }
+    return this;
   }
 }
-
 
