@@ -8,7 +8,8 @@ export default class Modal {
     this.cliqueForaModal = this.cliqueForaModal.bind(this);
   }
 
-  toggleModal() {
+  toggleModal(event) {
+    event.preventDefault();
     this.containerModal.classList.toggle('ativo');
   }
 
