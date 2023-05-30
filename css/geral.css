@@ -344,15 +344,23 @@ footer p {
 }
 
 [data-accordion="list"] dt::after {
-  content:'⬎';
+  content:'';
   margin-left: 1rem;
-  color: #e54;
+  width: 1rem;
+  height: 1rem;
+  display: inline-block;
+  background: url(../img/arrow-red.svg) no-repeat center center;
+  transform: rotate(90deg);
+  transition: transform .5s;
 }
 
 [data-accordion="list"] dt.ativo::after {
-  content:'⬏';
+  content:'';
   margin-left: 1rem;
-  color: #FFBB55;
+  width: 1rem;
+  height: 1rem;
+  background: url(../img/arrow-yellow.svg) no-repeat center center;
+  transform: rotate(-90deg);
   
 }
 
@@ -411,3 +419,11 @@ footer p {
   background: #3cff00;
   padding: 0.5rem;
 }
+
+.arrow-black {
+  background: url('../img/arrow-black.svg') no-repeat center center;
+  display: inline-block;
+  width: 0.8rem;
+  height: 1rem;
+}
+

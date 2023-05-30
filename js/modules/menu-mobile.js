@@ -5,7 +5,7 @@ export default class MenuMobile {
     this.menuButton = document.querySelector(menuButton);
     this.menuList = document.querySelector(menuList);
 
-    if (events === undefined) this.events = ['click'];
+    if (events === undefined) this.events = ['touchstart', 'click'];
     else this.events = events;
 
     this.activeClass = 'active';
@@ -13,7 +13,8 @@ export default class MenuMobile {
   }
 
 
-  openMenu() {
+  openMenu(event) {
+    event.preventDefault();
     this.menuList.classList.add(this.activeClass);
     this.menuButton.classList.add(this.activeClass);
     outsideClick(this.menuList, this.events, () => {
