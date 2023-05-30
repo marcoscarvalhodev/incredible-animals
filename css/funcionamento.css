@@ -30,3 +30,8 @@
       75%		{ background-color: #FAF6ED;}
       100%	        { background-color: #3cff00;}
     }  
+
+.btc-preco {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
