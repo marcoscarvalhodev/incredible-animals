@@ -11,7 +11,6 @@ import fetchBitcoin from './modules/fetch-bitcoin.js';
 import ScrollAnima from './modules/scroll-anima.js';
 import SlideNav from './modules/slide.js';
 
-
 const scrollSuave = new ScrollSuave('[data-menu="menu"] a[href^="#"]');
 scrollSuave.init();
 
