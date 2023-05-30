@@ -57,6 +57,9 @@ img {
 
 .menu li a:hover {
   color: #FAF6ED;
+  .arrow-black {
+    background: url('../img/arrow-white.svg') no-repeat center center;
+  }
 }
 
 /*TITULO*/
