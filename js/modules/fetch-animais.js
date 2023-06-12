@@ -20,10 +20,14 @@ export default function fetchAnimais(url, target) {
   }
 
   async function criarAnimais() {
-    const animaisResponse = await fetch(url);
-    const animaisJson = await animaisResponse.json();
-    animaisJson.forEach((animal) => preencherAnimais(animal));
-    animarNumeros();
+    try {
+      const animaisResponse = await fetch(url);
+      const animaisJson = await animaisResponse.json();
+      animaisJson.forEach((animal) => preencherAnimais(animal));
+      animarNumeros();
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return criarAnimais();
