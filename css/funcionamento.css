@@ -3,7 +3,7 @@
   content: '';
   width: 6px;
   height: 6px;
-  background: #e54;
+  background: #c90c0c;
   border-radius: 50%;
   margin-left: 4px;
   border: 2px solid black;
@@ -13,22 +13,22 @@
   animation: redBlink 1.5s infinite;
 	}
 	@keyframes redBlink{
-		0%		{ background-color: #e54;}
-		25%		{ background-color: #FAF6ED;}
-		50%		{ background-color: #e54;}
-		75%		{ background-color: #FAF6ED;}
-		100%	        { background-color: #e54;}
+		0%		{ background-color: #c90c0c;}
+		25%		{ background-color: #f5f7f8;}
+		50%		{ background-color: #c90c0c;}
+		75%		{ background-color: #f5f7f8;}
+		100%	        { background-color: #c90c0c;}
 	}
 
 .aberto::after {
     animation: greenBlink 1.5s infinite;
     }
     @keyframes greenBlink{
-      0%		{ background-color: #3cff00;}
-      25%		{ background-color: #FAF6ED;}
-      50%		{ background-color: #3cff00;}
-      75%		{ background-color: #FAF6ED;}
-      100%	        { background-color: #3cff00;}
+      0%		{ background-color: #3cd60d;}
+      25%		{ background-color: #f5f7f8;}
+      50%		{ background-color: #3cd60d;}
+      75%		{ background-color: #f5f7f8;}
+      100%	        { background-color: #3cd60d;}
     }  
 
 .btc-preco {

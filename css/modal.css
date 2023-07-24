@@ -36,14 +36,14 @@
   max-width: 60rem;
   background:white;
   padding: 40px;
-  border:10px solid #fb5;
+  border:10px solid #50a5eb;
   box-shadow: 0 0 0 10px white;
   position: relative;
   box-sizing: border-box;
 }
 
 .fechar{
-  background: #e54 url(../img/fechar.svg) no-repeat center center;
+  background: #c90c0c url(../img/fechar.svg) no-repeat center center;
   position: absolute;
   top: -30px;
   right: -30px;
@@ -79,7 +79,7 @@
 
 .modal button[type="submit"] {
   display: block;
-  background: #e54;
+  background: #c90c0c;
   border: none;
   border-radius: 4px;
   padding: 8px 19px;
